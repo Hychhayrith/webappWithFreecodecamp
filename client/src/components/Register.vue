@@ -1,13 +1,13 @@
 <template>
-  <v-layout column>
+  <div>
     <h1>Register</h1>
-
-    <input type="email" name="email" placeholder="Email" v-model="email">
+    <input type="email" name="email" placeholder="Email" v-model="email" />
     <br>
-    <input type="password" name="password" placeholder="Password" v-model="passworld">
+    <input type="password" name="password" placeholder="Password"  v-model="password">
     <br>
+    <div></div>
     <button type="submit" @click="register">Register</button>
-  </v-layout>
+  </div>
 </template>
 
 <script>

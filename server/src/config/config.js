@@ -1,0 +1,15 @@
+const path = require('path')
+
+module.exports = {
+    port: process.env.PORT || 3001,
+    db : {
+        database: process.env.DB_NAME || 'tabtracker',
+        user: process.env.DB_USER || 'tabtracker',
+        password: process.env.DB_PASS || 'tabtracker',
+        options: {
+            dialect: process.env.DIALECT || 'sqlite',
+            host: process.env.HOST || 'localhsot',
+            storage: './tabtracker.sqlite'
+        }
+    }
+}
