@@ -4,16 +4,15 @@ const Cors = require('cors');
 const Morgan = require('morgan')
 const app = Express();
 
-app.use(Morgan('combined'))
+app.use(Morgan('combined'))  
 app.use(BodyParser.json())
 app.use(Cors())
 
-app.use('/status', (req, res)=>{
+app.post('/register', (req, res) => {
     res.send({
-        text: "Hello from index"
-    }
-)})
-
+        message: `User email is: ${req.body.email}!`
+    })
+})
 app.listen((process.env.PORT || 3001), ()=> {
     console.log(`Process running on port ${3001}`);
 })
