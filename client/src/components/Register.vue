@@ -5,9 +5,16 @@
     <br>
     <input type="password" name="password" placeholder="Password"  v-model="password">
     <br>
-    <div></div>
-    <button type="submit" @click="register">Register</button>
-  </div>
+
+          <v-btn
+          white 
+          class="green lighten-2"
+          @click="register">
+          Register
+          </v-btn>
+        </panel>
+      </v-flex>
+    </v-layout>
 </template>
 
 <script>
