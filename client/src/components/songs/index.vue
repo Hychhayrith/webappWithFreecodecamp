@@ -1,6 +1,6 @@
 <template>
     <v-layout>
-        <v-flex xs6 v-if="isUserLoggedIn">
+        <v-flex xs6 v-if="isUserLoggedIn"> <!--need mapstate-->
             <songs-bookmarks/>
             <recently-reviewed-songs class="mt-2"/>
         </v-flex>
@@ -37,7 +37,6 @@ export default {
     data(){
         return {
             songs : null
-            console.log("songs" +songs)
         }
     },
     async mounted(){

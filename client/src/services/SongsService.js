@@ -7,5 +7,11 @@ export default {
                 search : search
             }
         })
+    },
+    post(song){
+        return Api().post('songs',song)
+    },
+    show(songId){
+        return Api().get(`songs/${songId}`)
     }
 }

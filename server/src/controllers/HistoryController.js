@@ -32,5 +32,21 @@ module.exports ={
                 error: 'an error has occured trying to fetch the history'
             })
         }
+    },
+    async post(req, res){
+        try{
+            const userId = req.user.id;
+            const {songId} = req.body;
+            const history = await History.create({
+                UserId : userid,
+                SongId: sondId
+            })
+            res.send(history);
+        }catch(err){
+            res.status(500).send({
+                error: 'an error has occured trying to create the history object'
+            })
+        }
+        
     }
 }

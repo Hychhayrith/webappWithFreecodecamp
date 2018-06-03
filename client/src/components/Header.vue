@@ -2,9 +2,9 @@
     <v-toolbar fixed class="teal lighten-1" dark>
         <v-toolbar-title class="mr-4">
             <router-link class="home" tag="span" 
-            :to="{
-                name: 'songs'
-            }">
+                :to="{
+                    name: 'songs'
+                }">
             KIT Funny Video
             </router-link>
         </v-toolbar-title>

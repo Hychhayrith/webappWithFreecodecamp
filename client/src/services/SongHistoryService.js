@@ -5,5 +5,8 @@ export default {
         return Api().get('hostories', {
             params: params
         })
+    },
+    post(songId){
+        return Api().post('hostories', songId)
     }
 }

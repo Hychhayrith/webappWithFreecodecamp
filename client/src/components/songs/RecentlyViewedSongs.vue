@@ -41,7 +41,7 @@ export default {
     },
     async mounted(){
         if (this.isUserLoggedIn){
-            this.histories = (await SongHistoryService.index()).data;
+            this.histories = (await SongsHistoryService.index()).data;
         }
     }
 }
