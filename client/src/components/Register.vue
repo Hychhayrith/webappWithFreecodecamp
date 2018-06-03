@@ -1,25 +1,44 @@
 <template>
-  <div>
-    <h1>Register</h1>
-    <input type="email" name="email" placeholder="Email" v-model="email" />
-    <br>
-    <input type="password" name="password" placeholder="Password"  v-model="password">
-    <br>
+    <v-layout column>
+      <v-flex xs6 offset-xs3>
+        <panel title="Register">
+          <form 
+            name="KIT-Funny-Video-Register"
+            autocomplete="off">
+            <v-text-field
+              type="email"
+              label="Emal"
+              v-model="email">
+            </v-text-field>
+            <br>
+            <v-text-field
+              label="Password"
+              type="password"
+              v-model="password"
+              autocomplete="new-password">
+            </v-text-field>
+            <br>
+          </form>
+
+          <br>
+
+          <div class="error" v-html="error"></div>
+
+          <br>
 
           <v-btn
-          white 
-          class="green lighten-2"
-          @click="register">
-          Register
+            dark 
+            class="green lighten-2"
+            @click="register">
+            Register
           </v-btn>
         </panel>
       </v-flex>
     </v-layout>
-</template>
+ </template> 
 
 <script>
 import AuthenticationService from '@/services/AuthenticationService.js'
-// import AuthenticationService from '@/services/AuthenticationService'
 export default {
   data () {
     return {
@@ -35,6 +54,9 @@ export default {
           email: this.email,
           password: this.password
         })
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({name: 'songs'})
         console.log(response.data)
       }catch(error) {
         this.error = error.response.data.error
@@ -46,18 +68,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.error{
+  color: red;
 }
 </style>
